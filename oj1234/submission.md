@@ -14,27 +14,27 @@
 
 หมายเลข/ชื่อโจทย์ OJ:
 
-``OJ สลับตัวอักษร
-
+```text
+OJ2996 - สลับตัวอักษร
 ```
 
 OJ submission ID ถ้ามีการส่งแล้ว:
 
-```544073
-
+```text
+OJ544073
 ```
 
 สถานะ OJ:
 
-```OJ Pass
-Pass / Not Pass / Not Submit
+```text
+Pass
 ```
 
 เวลาที่ใช้คิดและทำโจทย์ด้วยตนเอง:
 
 ```text
-
-```0-15 minutes
+0-15 minutes
+```
 
 เลือกหนึ่งข้อ:
 
@@ -72,8 +72,15 @@ More than 4 weeks
 
 ถ้ายังไม่เข้าใจโจทย์ทั้งหมด ให้เขียนสิ่งที่เข้าใจในตอนนี้ ความเข้าใจอาจยังไม่ครบหรืออาจผิดได้ แต่ต้องพยายามอธิบายอย่างจริงใจ
 
-```เราจะรับ input เข้ามาเป็นตัวแปร name จากนั้นโจทย์ได้กำหนดให้ output เป็นตัว lowercase จึงใช้ .lower() แล้วจึงใช้ [star:stop:step] ในการเรียงตัวอักษรกลับด้านโดยจะให้ step เป็น -1 เพราะการใส่ -1 ที่ step จะเรียงจากหลังมาหน้า
+```text
+input:
+โปรแกรมรับเป็นชื่อเข้ามาไม่ว่าจะมีตัวอักษร uppercase หรือ  lowercase กี่ตัว
 
+output:
+โปรแกรมควรพิมพ์ชื่อที่ได้รับเข้ามาโดยที่ต้องสลับตัวอักษรจากหลังมาหน้าและเปลี่ยนตัว uppercase ให้เป็น lowercase
+
+constraints:
+input ต้องมีความยาว 5 ตัวอักษรและต้องพิจารณาให้เป็น lowercase 
 ```
 
 ---
@@ -93,9 +100,10 @@ More than 4 weeks
 สามารถเขียนเป็น pseudocode, flowchart idea หรือขั้นตอนความคิดได้
 
 ```text
-Step 1:วิเคราะห์ว่าในการจะทำให้ตัว input ปริ้นออกมากลับหลังได้ต้องใช้ command ใด
-Step 2:ทดลองเขียนโค้ดตามสิ่งที่วิเคราะห์ออกมาได้
-Step 3:แก้ไขจุดที่ทำให้โค้ดรันไม่ผ่าน
+step 1: ให้โค้ดรับ input มา 5 ตัวอักษร
+step 2: ให้โค้ดเปลี่ยนจากตัวอักษร uppercase เป็น lowercase
+step 3: ให้โค้ดสลับตำแหน่งของตัวอักษรให้ตัวสุดท้ายมาอยู่ที่ 1 ตัวที่ 1 ไปอยู่ที่สุดท้าย และให้ตัวอื่นๆทำตามโดยคิดตาม command [::-1]
+step 4: output ออกมาเป็นชื่อที่ตัวอักษรสลับและเป็น lowercase ทุกตัว
 ```
 
 ---
@@ -114,8 +122,8 @@ Step 3:แก้ไขจุดที่ทำให้โค้ดรันไ�
 
 ห้ามคัดลอกคำอธิบายจากคนอื่น
 
-```text ใช้ .lower() ในการทำให้ตัว input เป็นตัวอักษร lowercase และใช้ -1 เป็น step ใน [start:stop:step] เพื่อให้ตัวอักษรรันจากท้ายมาหน้า
-
+```text
+รับ input มาเป็น str และใช้ .lower เป็นการทำให้ตัวอักษรกลายเป็น lowercase และใช้ [start:stop:step] ในการสลับตัวอักษรจากหลังมาหน้า จากนั้น output มาตามคำสั่ง
 ```
 
 ---
@@ -134,96 +142,96 @@ Step 3:แก้ไขจุดที่ทำให้โค้ดรันไ�
 
 ทำไมเลือก case นี้:
 
-```เนื่องจากมีการสลับกันของตัว lowercase และ uppercase
-
+```text
+เพราะเป็น case ที่มีการสลับตัว uppercase และ lowercase
 ```
 
 Input:
 
-```MIyaBi
-
+```text
+MiYab
 ```
 
 Expected output:
 
-```ibayim
-
+```text
+bayim
 ```
 
 Actual output:
 
-```ibayim
-
+```text
+bayim
 ```
 
 Result:
 
 ```text
-Pass / Not Pass
-```Pass
+Pass
+```
 
 ### Test Case 2
 
-ทำไมเลือก case นี้:เพราะเป็นตัวเลือกที่เป็นสิ่งที่คนทั่วไปน่าจะ input เข้ามา
+ทำไมเลือก case นี้:
 
-```
-
+```text
+เพราะเป็นเคสที่มีแต่ตัว uppercase
 ```
 
 Input:
 
-```Alex
-
+```text
+CASEY
 ```
 
 Expected output:
 
-```xela
-
+```text
+yesac
 ```
 
 Actual output:
 
-```xela
-
+```text
+yesac
 ```
 
 Result:
 
-```Pass
-Pass / Not Pass
+```text
+Pass
 ```
 
 ### Test Case 3
 
 ทำไมเลือก case นี้:
 
-```เพราะเป็นการทดลองว่าหากได้รับเป็นตัว uppercase ทุกตัวจะได้ output อย่างไร
-
+```text
+เพราะเป็นเคสที่คนส่วนใหญ่น่าจะใส่มา
 ```
 
 Input:
 
-```AMANDA
-
+```text
+MIKEY
 ```
 
 Expected output:
 
-```adnama
-
+```text
+yekim
 ```
 
 Actual output:
 
-```adnama
-
+```text
+yekim
 ```
 
 Result:
 
-```Pass
-Pass / Not Pass
+```text
+Pass
 ```
 
 ---
@@ -232,8 +240,8 @@ Pass / Not Pass
 
 ใช้ AI กับโจทย์นี้หรือไม่
 
-```No
-Yes / No
+```text
+No
 ```
 
 ถ้าใช้ AI ต้องทำไฟล์นี้ด้วย:
@@ -250,8 +258,8 @@ ai_reflection.md
 
 ได้ถามเพื่อน TA ผู้สอน หรือบุคคลอื่นเพื่อขอความช่วยเหลือในโจทย์นี้หรือไม่
 
-```No
-Yes / No
+```text
+No
 ```
 
 ถ้าใช่ ให้อธิบายสั้น ๆ ว่าได้รับความช่วยเหลือแบบใด
@@ -305,10 +313,10 @@ No
 
 | Statement | Yes/No |
 |---|---|
-| I wrote this submission in my own words. |Yes |
-| I understand my final code. |Yes |
-| I recorded the real OJ status. |Yes |
-| I did not copy AI-generated text directly into this file. |Yes |
-| I did not copy code from another person. |Yes |
-| If I received human help, I disclosed it in this file. |Yes |
-| I submitted the final code to the OJ by myself. |Yes |
+| I wrote this submission in my own words. | Yes |
+| I understand my final code. | Yes |
+| I recorded the real OJ status. | Yes |
+| I did not copy AI-generated text directly into this file. | Yes |
+| I did not copy code from another person. | Yes |
+| If I received human help, I disclosed it in this file. | Yes |
+| I submitted the final code to the OJ by myself. | Yes |
